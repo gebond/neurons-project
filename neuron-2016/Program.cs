@@ -9,7 +9,9 @@ namespace neuron_2016
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("start");
 
+            Console.ReadKey();
         }
     }
 }
