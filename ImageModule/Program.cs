@@ -10,10 +10,7 @@ namespace neuron_2016
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("start");
-            var imgReader = new ImageReader();
-            imgReader.tryToRead();
-            Console.ReadKey();
+            Console.WriteLine("image module found");
         }
     }
 }

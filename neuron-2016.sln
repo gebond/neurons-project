@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neuron-2016", "neuron-2016\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuronTests", "NeuronTests\NeuronTests.csproj", "{7A64AB96-B95B-48E1-999F-E57C38A1BB1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageReader", "ImageReader\ImageReader.csproj", "{0FA19059-02E3-4809-88FB-DFBAFE648E91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageModule", "ImageModule\ImageModule.csproj", "{0FA19059-02E3-4809-88FB-DFBAFE648E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

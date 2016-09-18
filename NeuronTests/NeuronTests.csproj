@@ -57,10 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ImageReader\ImageReader.csproj">
-      <Project>{0fa19059-02e3-4809-88fb-dfbafe648e91}</Project>
-      <Name>ImageReader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\neuron-2016\neuron-2016.csproj">
       <Project>{7761a3b9-ce07-4bcd-afa3-cd75a798c0a3}</Project>
       <Name>neuron-2016</Name>
