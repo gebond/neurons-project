@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace NeuronTests
 {
     [TestClass]
-    public class NeuronUnitTest
+    public class NeuroNetworkUnitTest
     {
         [TestMethod]
         public void initTest()
@@ -12,5 +12,4 @@ namespace NeuronTests
 
         }
     }
-   
 }
