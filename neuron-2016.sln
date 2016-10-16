@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neuron-2016", "neuron-2016\neuron-2016.csproj", "{7761A3B9-CE07-4BCD-AFA3-CD75A798C0A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuronProject", "neuron-2016\NeuronProject.csproj", "{7761A3B9-CE07-4BCD-AFA3-CD75A798C0A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuronTests", "NeuronTests\NeuronTests.csproj", "{7A64AB96-B95B-48E1-999F-E57C38A1BB1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageModule", "ImageModule\ImageModule.csproj", "{0FA19059-02E3-4809-88FB-DFBAFE648E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearAlgebra", "..\LinearAlgebra\LinearAlgebra\LinearAlgebra.csproj", "{9A3DB9BB-482A-4008-8370-7A00A85B64E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0FA19059-02E3-4809-88FB-DFBAFE648E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FA19059-02E3-4809-88FB-DFBAFE648E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FA19059-02E3-4809-88FB-DFBAFE648E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3DB9BB-482A-4008-8370-7A00A85B64E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3DB9BB-482A-4008-8370-7A00A85B64E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3DB9BB-482A-4008-8370-7A00A85B64E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3DB9BB-482A-4008-8370-7A00A85B64E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

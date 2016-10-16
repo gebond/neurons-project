@@ -55,14 +55,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="NeuronTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest2.cs" />
+    <Compile Include="NetworkTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\neuron-2016\neuron-2016.csproj">
+    <ProjectReference Include="..\neuron-2016\NeuronProject.csproj">
       <Project>{7761a3b9-ce07-4bcd-afa3-cd75a798c0a3}</Project>
-      <Name>neuron-2016</Name>
+      <Name>NeuronProject</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

@@ -41,12 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Input.cs" />
     <Compile Include="classes\Neuron.cs" />
     <Compile Include="classes\NeuronNetwork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LinearAlgebra\LinearAlgebra\LinearAlgebra.csproj">
+      <Project>{9a3db9bb-482a-4008-8370-7a00a85b64e2}</Project>
+      <Name>LinearAlgebra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImageModule\ImageModule.csproj">
       <Project>{0fa19059-02e3-4809-88fb-dfbafe648e91}</Project>
       <Name>ImageModule</Name>

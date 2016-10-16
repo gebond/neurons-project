@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace neuron_2016.classes
+namespace NeuronProject.classes
 {
-    class Neuron
+    public class Neuron
     {
         int power;
         double[] weights;
@@ -20,8 +20,22 @@ namespace neuron_2016.classes
             weights = new double[countInput];
             power = 0;
         }
+        
 
+        public double getPower(Input[] inputs) {
+            double resultPower = 0;
+            for (int i = 0; i < inputs.Length; i++)
+            {
+                resultPower += inputs[i].Value * weights[i];
+            }
+            return resultPower;
+        }
 
+        public override string ToString()
+        {
+            String info = " weights: [" + weights.ToString() + "]";
+            return info;
+        }
 
     }
 }
