@@ -11,7 +11,7 @@ namespace NeuronProject.classes
 
         public Input(double value)
         {
-            value = 1;
+            this.value = value;
         }
 
         public double Value

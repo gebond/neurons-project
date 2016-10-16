@@ -7,33 +7,62 @@ namespace NeuronProject.classes
 {
     public class Neuron
     {
-        int power;
-        double[] weights;
+        int weigth_H; // height
+        int weigth_W; // width
+        double[,] weights;
 
-        public Neuron(int countInput)
+        public Neuron(int inputHeigth, int inputWidth)
         {
-            if(countInput<=0)
+            if(inputHeigth <= 0 || inputWidth <= 0)
             {
                 throw new ArgumentException("input lenght is 0 or less");
             }
             // countInput - number of items using as Input Array
-            weights = new double[countInput];
-            power = 0;
+            weights = new double[inputHeigth, inputWidth];
         }
         
 
-        public double getPower(Input[] inputs) {
+        public double getPower(Input[,] inputs) {
             double resultPower = 0;
-            for (int i = 0; i < inputs.Length; i++)
+            for (int i = 0; i < weigth_H; i++)
             {
-                resultPower += inputs[i].Value * weights[i];
+                for (int j = 0; j < weigth_W; j++)
+                {
+                    resultPower += inputs[i,j].Value * weights[i,j];
+                }
             }
             return resultPower;
         }
 
+        public void study(Input[,] inputs, double difference)
+        {
+            if(inputs.Length != weights.Length)
+            {
+                throw new ArgumentException("inputs len != weigths len!");
+            }
+            if(weights == null)
+            {
+                throw new ArgumentNullException("weigths are Empty!");
+            }
+            for (int i = 0; i < weigth_H; i++)
+            {
+                for (int j = 0; j < weigth_W; j++)
+                {
+                    weights[i,j] += difference * inputs[i,j].Value;
+                }
+                
+            }
+        }
+
         public override string ToString()
         {
-            String info = " weights: [" + weights.ToString() + "]";
+            var len = weights.Length;
+            String info = " [" + len + "] weights: [";
+            for (int i = 0; i < len-1; i++)
+            {
+                info = String.Concat(info, weights[i] + ", ");
+            } 
+            info = String.Concat(info, weights[len - 1] + "]");
             return info;
         }
 
