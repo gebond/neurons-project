@@ -63,6 +63,16 @@ namespace ImageModule.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3changed {
+            get {
+                object obj = ResourceManager.GetObject("_3changed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _image_3 {
             get {
                 object obj = ResourceManager.GetObject("_image_3", resourceCulture);

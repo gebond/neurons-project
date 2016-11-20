@@ -67,6 +67,16 @@
   <ItemGroup>
     <None Include="images\7.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\3changed.png" />
+    <None Include="Resources\_image_3_changed.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\projects\LinearAlgebra\LinearAlgebra\LinearAlgebra.csproj">
+      <Project>{9a3db9bb-482a-4008-8370-7a00a85b64e2}</Project>
+      <Name>LinearAlgebra</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

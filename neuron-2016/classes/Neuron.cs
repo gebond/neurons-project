@@ -1,70 +1,70 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using LinearAlgebra;
 
-namespace NeuronProject.classes
-{
-    public class Neuron
-    {
-        int weigth_H; // height
-        int weigth_W; // width
-        double[,] weights;
-
-        public Neuron(int inputHeigth, int inputWidth)
-        {
-            if(inputHeigth <= 0 || inputWidth <= 0)
-            {
+namespace NeuronProject.classes {
+    public class Neuron {
+        #region constructors
+        public Neuron(int inputRows, int inputCols) {
+            if(inputRows <= 0 || inputRows <= 0) {
                 throw new ArgumentException("input lenght is 0 or less");
             }
-            // countInput - number of items using as Input Array
-            weights = new double[inputHeigth, inputWidth];
+            weights = new Matrix(inputRows, inputCols);
+            weights.randomize();
+            weights.normalize();
         }
-        
+        #endregion
 
-        public double getPower(Input[,] inputs) {
+        #region main methods
+        public double getPower(Matrix inputs) {
+            checkWeigth(inputs.Rows, inputs.Cols);
             double resultPower = 0;
-            for (int i = 0; i < weigth_H; i++)
-            {
-                for (int j = 0; j < weigth_W; j++)
-                {
-                    resultPower += inputs[i,j].Value * weights[i,j];
+            for(int i = 0; i < weights.Rows; i++) {
+                for(int j = 0; j < weights.Cols; j++) {
+                    resultPower += inputs[i, j] * weights[i, j];
                 }
             }
             return resultPower;
         }
-
-        public void study(Input[,] inputs, double difference)
-        {
-            if(inputs.Length != weights.Length)
-            {
-                throw new ArgumentException("inputs len != weigths len!");
+        public double getPowerHard(Matrix inputs) {
+            var power = getPower(inputs);
+            return (power > minimumPower) ? 1 : 0;
+        }
+        public void study(Matrix inputs) {
+            checkWeigth(inputs.Rows, inputs.Cols);
+            //Console.WriteLine("Weigths OLD is {0}", weights.ToString());
+            for(int i = 0; i < weights.Rows; i++) {
+                for(int j = 0; j < weights.Cols; j++) {
+                    weights[i, j] += 0.5 * (inputs[i, j] - weights[i, j]);
+                }
             }
-            if(weights == null)
-            {
+            //Console.WriteLine("Weigths NEW is {0}", weights.ToString());
+        }
+        public void normalizeWeigths() {
+            weights.normalize();
+        }
+        #endregion
+
+        #region private methods
+        private void checkWeigth(int rowsCount, int colsCount) {
+            if(weights == null) {
                 throw new ArgumentNullException("weigths are Empty!");
             }
-            for (int i = 0; i < weigth_H; i++)
-            {
-                for (int j = 0; j < weigth_W; j++)
-                {
-                    weights[i,j] += difference * inputs[i,j].Value;
-                }
-                
+            if(rowsCount != weights.Rows || colsCount != weights.Cols) {
+                throw new ArgumentException("inputs len != weigths len!");
             }
         }
+        #endregion
 
-        public override string ToString()
-        {
-            var len = weights.Length;
-            String info = " [" + len + "] weights: [";
-            for (int i = 0; i < len-1; i++)
-            {
-                info = String.Concat(info, weights[i] + ", ");
-            } 
-            info = String.Concat(info, weights[len - 1] + "]");
+        #region override object methods
+        public override string ToString() {
+            var info = "neuron's weights:" + weights.ToString();
             return info;
         }
+        #endregion
 
+        #region private fields
+        private Matrix weights;
+        private static double minimumPower = 10;
+        #endregion
     }
 }

@@ -60,6 +60,10 @@
     <Compile Include="NetworkTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\projects\LinearAlgebra\LinearAlgebra\LinearAlgebra.csproj">
+      <Project>{9a3db9bb-482a-4008-8370-7a00a85b64e2}</Project>
+      <Name>LinearAlgebra</Name>
+    </ProjectReference>
     <ProjectReference Include="..\neuron-2016\NeuronProject.csproj">
       <Project>{7761a3b9-ce07-4bcd-afa3-cd75a798c0a3}</Project>
       <Name>NeuronProject</Name>
